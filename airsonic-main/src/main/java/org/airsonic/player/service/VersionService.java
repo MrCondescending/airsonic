@@ -80,7 +80,8 @@ public class VersionService {
      *
      * @return The version number for the locally installed Airsonic version.
      */
-    public synchronized Version getLocalVersion() { //TODO NULL POINTER EXCEPTION
+    public synchronized Version getLocalVersion() {
+        //TODO NULL POINTER EXCEPTION
         if (localVersion == null) {
             try {
                 localVersion = new Version(readLineFromResource("/version.txt"));
