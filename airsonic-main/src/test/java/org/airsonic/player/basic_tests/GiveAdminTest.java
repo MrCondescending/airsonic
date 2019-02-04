@@ -30,7 +30,7 @@ public class GiveAdminTest {
     }
 
     @Test
-    public void isAdminWhenGivenAdmin(){
+    public void givenUserIsNotAdmin_whenGivenAdmin_thenIsAdmin(){
         testuser.setAdminRole(true);
         assertTrue(testuser.isAdminRole());
     }

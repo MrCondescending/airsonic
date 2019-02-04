@@ -37,12 +37,12 @@ public class SetEmptyUserSettings {
     }
 
     @Test
-    public void NoUsernameWhenSetUsername(){
+    public void givenNormalUser_whenGivenSpecialUsername_thenUsernameUpdated(){
         usc.setUsername(specialUsername);
         assertEquals(usc.getUsername(), specialUsername);
     }
     @Test
-    public void NoPasswordWhenSetPassword(){
+    public void givenNormalUser_whenGivenSpecialPassword_thenUsernameUpdated(){
         testuser.setPassword(specialPassword);
         assertEquals(testuser.getPassword(), specialPassword);
     }
