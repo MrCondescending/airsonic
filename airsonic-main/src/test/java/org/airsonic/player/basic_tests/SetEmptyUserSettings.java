@@ -19,27 +19,27 @@ Author: Noah Fields (OGoodness)
 public class SetEmptyUserSettings {
 
     private User testuser = new User("", "", "testie@testing.com");
-    private UserSettingsCommand usc = new UserSettingsCommand();
+    private UserSettingsCommand sut = new UserSettingsCommand();
     private String specialUsername = "A1\"\'\\/{}[]=+-_";
     private String specialPassword = "A1\"\'\\/{}[]=+-_";
 
     @Before
     public void buildUserAndUSC(){
 
-        usc.setUser(testuser);
+        sut.setUser(testuser);
 
 
     }
 
     @After
     public void removeUser(){
-        this.usc.setDeleteUser(true);
+        this.sut.setDeleteUser(true);
     }
 
     @Test
     public void givenNormalUser_whenGivenSpecialUsername_thenUsernameUpdated(){
-        usc.setUsername(specialUsername);
-        assertEquals(usc.getUsername(), specialUsername);
+        sut.setUsername(specialUsername);
+        assertEquals(sut.getUsername(), specialUsername);
     }
     @Test
     public void givenNormalUser_whenGivenSpecialPassword_thenUsernameUpdated(){
