@@ -23,7 +23,7 @@ public class VersionTest {
     }
 
     @Test
-    public void ifVersionWhenCreatedThenEquals(){
+    public void givenVersion_whenCheckingVersion_ThenEqualsVersion(){
         assertEquals(new Version("1.2.3"), v);
     }
 }

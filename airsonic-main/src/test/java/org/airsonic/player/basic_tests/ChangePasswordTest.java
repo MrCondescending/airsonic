@@ -24,7 +24,7 @@ public class ChangePasswordTest {
 
 
     @Test
-    public void passwordChangedWhenChangePassword(){
+    public void givenOriginalPassword_whenGivenNewPassword_thenPasswordUpdated(){
         testuser.setPassword("MyNewPassword");
         assertEquals("MyNewPassword",testuser.getPassword());
     }

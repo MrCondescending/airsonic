@@ -19,7 +19,7 @@ public class SetPlaylistNameTest {
     }
 
     @Test
-    public void ifPlayListWhenNameSetThenEquals() {
+    public void givenPlaylist_whenPlaylistNameSet_thenPlaylistNameUpdated() {
         assertEquals("Patrick's Playlist", p.getName());
     }
 }
