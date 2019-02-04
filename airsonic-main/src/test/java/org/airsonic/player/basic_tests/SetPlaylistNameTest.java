@@ -9,7 +9,7 @@ import org.junit.Test;
 //Author : Patrick O'Doherty
 //This case tests and verifies the creation of Playlist objects
 
-public class SetPlaylistTest {
+public class SetPlaylistNameTest {
     private Playlist p;
 
     @Before
