@@ -20,8 +20,8 @@ public class SetEmptyUserSettings {
 
     private User testuser = new User("", "", "testie@testing.com");
     private UserSettingsCommand usc = new UserSettingsCommand();
-    private String specialUsername = "A1\"\'\\/\n{}[]=+-_";
-    private String specialPassword = "A1\"\'\\/\n{}[]=+-_";
+    private String specialUsername = "A1\"\'\\/{}[]=+-_";
+    private String specialPassword = "A1\"\'\\/{}[]=+-_";
 
     @Before
     public void buildUserAndUSC(){
@@ -39,12 +39,12 @@ public class SetEmptyUserSettings {
     @Test
     public void NoUsernameWhenSetUsername(){
         usc.setUsername(specialUsername);
-        assertSame(testuser.getUsername(), specialUsername);
+        assertEquals(usc.getUsername(), specialUsername);
     }
     @Test
     public void NoPasswordWhenSetPassword(){
         testuser.setPassword(specialPassword);
-        assertSame(testuser.getPassword(), specialPassword);
+        assertEquals(testuser.getPassword(), specialPassword);
     }
 
 
