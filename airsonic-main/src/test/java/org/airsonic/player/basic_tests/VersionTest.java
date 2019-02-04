@@ -15,15 +15,15 @@ import org.junit.Test;
  */
 
 public class VersionTest {
-    private Version v;
+    private Version sut;
 
     @Before
     public void createVersion(){
-        v = new Version("1.2.3");
+        sut = new Version("1.2.3");
     }
 
     @Test
     public void givenVersion_whenCheckingVersion_ThenEqualsVersion(){
-        assertEquals(new Version("1.2.3"), v);
+        assertEquals(new Version("1.2.3"), sut);
     }
 }

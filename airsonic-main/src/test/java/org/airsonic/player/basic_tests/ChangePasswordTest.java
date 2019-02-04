@@ -14,19 +14,19 @@ This is a test of changing the password of a user.
 Author: Brent Schleper
  */
 public class ChangePasswordTest {
-    private User testuser = new User("username", "pw1", "email@email.com");
+    private User sut = new User("username", "pw1", "email@email.com");
     private UserSettingsCommand usc = new UserSettingsCommand();
 
     @Before
     public void buildUserAndUSC(){
-        usc.setUser(testuser);
+        usc.setUser(sut);
     }
 
 
     @Test
     public void givenOriginalPassword_whenGivenNewPassword_thenPasswordUpdated(){
-        testuser.setPassword("MyNewPassword");
-        assertEquals("MyNewPassword",testuser.getPassword());
+        sut.setPassword("MyNewPassword");
+        assertEquals("MyNewPassword",sut.getPassword());
     }
 
     @After

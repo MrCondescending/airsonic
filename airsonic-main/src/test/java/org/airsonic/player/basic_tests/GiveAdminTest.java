@@ -16,12 +16,12 @@ This is a test of the admin setAdmin feature of the application
 Author: Devin Workman (MrCondescending)
  */
 public class GiveAdminTest {
-    private User testuser = new User("testuser", "test", "test@test.com");
+    private User sut = new User("testuser", "test", "test@test.com");
     private UserSettingsCommand usc = new UserSettingsCommand();
     @Before
     public void buildUserAndUSC(){
 
-        usc.setUser(testuser);
+        usc.setUser(sut);
     }
 
     @After
@@ -31,8 +31,8 @@ public class GiveAdminTest {
 
     @Test
     public void givenUserIsNotAdmin_whenGivenAdmin_thenIsAdmin(){
-        testuser.setAdminRole(true);
-        assertTrue(testuser.isAdminRole());
+        sut.setAdminRole(true);
+        assertTrue(sut.isAdminRole());
     }
 
 
