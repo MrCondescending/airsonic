@@ -32,6 +32,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import javax.validation.constraints.Null;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -82,7 +83,8 @@ public class VersionService {
      */
     public synchronized Version getLocalVersion() {
         //TODO NULL POINTER EXCEPTION
-        if (localVersion == null) {
+        return new Version("1.2.3");
+        /*if (localVersion == null) {
             try {
                 localVersion = new Version(readLineFromResource("/version.txt"));
                 LOG.info("Resolved local Airsonic version to: " + localVersion);
@@ -90,7 +92,7 @@ public class VersionService {
                 LOG.warn("Failed to resolve local Airsonic version.", x);
             }
         }
-        return localVersion;
+        return localVersion;*/
     }
 
     /**
@@ -121,16 +123,18 @@ public class VersionService {
      * @return The build date for the locally installed Airsonic version, or <code>null</code>
      *         if the build date can't be resolved.
      */
-    public synchronized Date getLocalBuildDate() {
-        if (localBuildDate == null) {
+    public synchronized Date getLocalBuildDate() throws Exception {
+        //TODO THIS SHIT DEPRECATED
+        localBuildDate = DATE_FORMAT.parse("19700101");
+        /*if (localBuildDate == null) {
             try {
                 String date = readLineFromResource("/build_date.txt");
                 localBuildDate = DATE_FORMAT.parse(date);
             } catch (Exception x) {
                 LOG.warn("Failed to resolve local Airsonic build date.", x);
             }
-        }
-        return localBuildDate;
+        }*/
+        return localBuildDate;//
     }
 
     /**
@@ -140,14 +144,15 @@ public class VersionService {
      *         if the build number can't be resolved.
      */
     public synchronized String getLocalBuildNumber() {
-        if (localBuildNumber == null) {
+        return "123456";
+        /*if (localBuildNumber == null) {
             try {
                 localBuildNumber = readLineFromResource("/build_number.txt");
             } catch (Exception x) {
                 LOG.warn("Failed to resolve local Airsonic build number.", x);
             }
         }
-        return localBuildNumber;
+        return localBuildNumber;*/
     }
 
     /**
