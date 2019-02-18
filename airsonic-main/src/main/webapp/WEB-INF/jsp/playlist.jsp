@@ -30,7 +30,7 @@
                     }
                 }});
 
-            $("#dialog-delete").dialog({resizable: false, height: 170, autoOpen: false,
+            $("#dialog-delete").dialog({resizable: true, height: 200, autoOpen: false,
                 buttons: {
                     "<fmt:message key="common.delete"/>": function() {
                         $(this).dialog("close");
