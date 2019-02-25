@@ -103,8 +103,8 @@
         <table>
             <tr>
                 <td><fmt:message key="podcastreceiver.subscribe"/></td>
-                <td><input type="text" name="add" value="http://" style="width:30em" onclick="select()"/></td>
-                <td><input type="submit" value="<fmt:message key="common.ok"/>"/></td>
+                <td><input type="text" name="add" value="http://" style="width:30em" onclick="select()" pattern=".*\.xml.*" title="Must be an XML file" /></td>
+                <td><input type="submit" value="<fmt:message key="common.ok"/>" /></td>
             </tr>
         </table>
     </form:form>
