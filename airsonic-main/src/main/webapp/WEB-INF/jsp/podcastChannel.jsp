@@ -22,11 +22,11 @@
 <html><head>
     <%@ include file="head.jsp" %>
     <%@ include file="jquery.jsp" %>
-
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
         function sortTable(n) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-            table = document.getElementById("orderdTable");
+            table = document.getElementById("orderedTable");
             switching = true;
             // Set the sorting direction to ascending:
             dir = "asc";
@@ -43,8 +43,8 @@
                     shouldSwitch = false;
                     /* Get the two elements you want to compare,
                     one from current row and one from the next: */
-                    x = rows[i].getElementsByTagName("TD")[n];
-                    y = rows[i + 1].getElementsByTagName("TD")[n];
+                    x = rows[i].getElementsByTagName("TD")[n].children[0];
+                    y = rows[i + 1].getElementsByTagName("TD")[n].children[0];
                     /* Check if the two rows should switch place,
                     based on the direction, asc or desc: */
                     if (dir == "asc") {
@@ -78,6 +78,9 @@
                 }
             }
         }
+
+
+
     </script>
 
     <script type="text/javascript" language="javascript">
@@ -166,7 +169,7 @@
 
 <div style="height:0.7em;clear:both"></div>
 
-<table  id="orderdTable" class="music">
+<table  id="orderedTable" class="music">
     <thead>
         <th onclick="orderClick(this)"  id="order"></th>
         <th></th>
@@ -174,9 +177,9 @@
         <th></th>
         <th></th>
         <th class="sortable" onclick="sortTable(5)" id="headerName" >Name</th>
-        <th onclick="lengthClick(this)" class="sortable" >Length</th>
-        <th onclick="dateClick(this)" class="sortable" >Date</th>
-        <th onclick="statusClick(this)" class="sortable">Status</th>
+        <th onclick="sortTable(6)" class="sortable" >Length</th>
+        <th onclick="sortTable(7)" class="sortable" >Date</th>
+        <th onclick="sortTable(8)" class="sortable">Status</th>
         <th>Description</th>
     </thead>
     <c:forEach items="${model.episodes}" var="episode" varStatus="i">
@@ -187,7 +190,10 @@
 
             <c:choose>
                 <c:when test="${empty episode.mediaFileId or episode.status ne 'COMPLETED'}">
-                    <td colspan="4"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </c:when>
                 <c:otherwise>
                     <c:import url="playButtons.jsp">
@@ -258,4 +264,9 @@
         <fmt:message key="podcastreceiver.confirmdelete"/></p>
 </div>
 
-</body></html>
+</body>
+
+<script>
+    sortTable(5);
+</script>
+</html>
