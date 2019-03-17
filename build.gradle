@@ -14,7 +14,7 @@ subprojects {
     repositories {
         mavenLocal()
         maven {
-            url = 'file:///home/noahp/IdeaProjects/norsesonic/../repo'
+            url = "$projectDir/repo"
         }
 
         maven {
@@ -31,18 +31,6 @@ subprojects {
 
         maven {
             url = 'http://repo.maven.apache.org/maven2'
-        }
-
-        maven {
-            url = 'file:///home/noahp/IdeaProjects/norsesonic/subsonic-rest-api/../repo'
-        }
-
-        maven {
-            url = 'file:///home/noahp/IdeaProjects/norsesonic/airsonic-sonos-api/../repo'
-        }
-
-        maven {
-            url = 'file:///home/noahp/IdeaProjects/norsesonic/airsonic-main/../repo'
         }
     }
 
