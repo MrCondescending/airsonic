@@ -3,6 +3,6 @@
  */
 
 rootProject.name = 'airsonic'
-include(':subsonic-rest-api')
-include(':airsonic-sonos-api')
-include(':airsonic-main')
+include 'subsonic-rest-api'
+include 'airsonic-sonos-api'
+include 'airsonic-main'
