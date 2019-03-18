@@ -11,6 +11,9 @@ subprojects {
     buildscript {
         ext {
             cxfVersion = '3.2.6'
+            xjcVersion= '3.0.5'
+            jaxbOutputDir = "$buildDir/generated/main/java"
+            jaxb2BasicsVersion = '0.11.0'
         }
     }
 
@@ -20,7 +23,7 @@ subprojects {
     repositories {
         mavenLocal()
         maven {
-            url = "$projectDir/repo"
+            url = "$projectDir/../repo"
         }
 
         maven {
@@ -41,6 +44,7 @@ subprojects {
     }
 
     sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
 
     /*
     publishing {
