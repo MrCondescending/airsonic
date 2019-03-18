@@ -1,5 +1,5 @@
-buildscript{
-    repositories{
+buildscript {
+    repositories {
         jcenter()
         mavenCentral()
     }
@@ -17,6 +17,15 @@ repositories {
     mavenCentral()
 }
 
+dependencies {
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'org.jvnet.jaxb2_commons:jaxb2-basics-runtime:0.11.0'
+
+    wsdl2java 'org.jvnet.jaxb2_commons:jaxb2-basics-runtime:0.11.0'
+    wsdl2java 'org.jvnet.jaxb2_commons:jaxb2-basics:0.11.0'
+}
+
 sourceSets {
     main {
         resources {
@@ -25,9 +34,9 @@ sourceSets {
     }
 }
 
-wsdl2java{
+wsdl2java {
     wsdlsToGenerate = [
-            ['-autoNameResolution',"$projectDir/src/main/resources/sonos-1.1.wsdl"]
+            ['-autoNameResolution', "$projectDir/src/main/resources/sonos-1.1.wsdl"]
     ]
     generatedWsdlDir = file("$jaxbOutputDir")
     wsdlDir = file("$projectDir/src/main/resources")
@@ -36,15 +45,6 @@ wsdl2java{
 
 wsdl2javaExt {
     cxfVersion = "$cxfVersion"
-}
-
-dependencies {
-    testCompile 'junit:junit:4.12'
-
-    compile 'org.jvnet.jaxb2_commons:jaxb2-basics-runtime:0.11.0'
-
-    wsdl2java 'org.jvnet.jaxb2_commons:jaxb2-basics-runtime:0.11.0'
-    wsdl2java 'org.jvnet.jaxb2_commons:jaxb2-basics:0.11.0'
 }
 
 compileJava.dependsOn wsdl2java
