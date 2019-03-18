@@ -5,7 +5,7 @@ jobs:
         -checkout
         - run:
           name: Echo Out
-          command: 'echo Hello World'
+          command: 'echo "Hello World"'
 workflow:
   version: 2
   build:
