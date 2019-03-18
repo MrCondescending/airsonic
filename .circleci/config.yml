@@ -8,7 +8,7 @@ jobs:
         - restore_cache:
             keys:
               - gradle-{{ checksum "build.gradle" }}
-        - run: gradle norsesonic:airsonic-main: war
+        - run: gradle war
         - save_cache:
             paths:
               - ~/.gradle
