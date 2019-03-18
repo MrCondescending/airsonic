@@ -22,6 +22,19 @@ ext {
     }
 }
 
+sourceSets {
+    main {
+        java {
+            srcDirs += file("${project.rootDir}/airsonic-sonos-api/build/generated/main/java")
+            srcDirs += file("${project.rootDir}/subsonic-rest-api/build/generated/main/java")
+        }
+        resources {
+            srcDirs += file("${project.rootDir}/airsonic-sonos-api/src/main/resources")
+            srcDirs += file("${project.rootDir}/subsonic-rest-api/src/main/resources")
+        }
+    }
+}
+
 dependencies {
     implementation project(path: ':subsonic-rest-api', configuration: 'jaxb2'), withoutSLF4J
     implementation project(path: ':airsonic-sonos-api')
@@ -142,5 +155,7 @@ dependencies {
     runtime 'mysql:mysql-connector-java:5.1.43'
     runtime 'org.mariadb.jdbc:mariadb-java-client:2.1.2'
 }
+
+compileJava.dependsOn ':subsonic-rest-api:compileJava', ':airsonic-sonos-api:compileJava'
 
 description = 'Airsonic Main'
