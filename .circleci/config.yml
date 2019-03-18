@@ -4,6 +4,6 @@ workflow:
   build:
     jobs:
       -build
-      filter:
+      filters:
         branches:
             only: gradle-migration
