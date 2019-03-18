@@ -1,6 +1,10 @@
 version: 2
 jobs:
   build:
+    steps:
+        -run:
+          name: Echo Out
+          command: 'echo Hello World'
 workflow:
   version: 2
   build:
