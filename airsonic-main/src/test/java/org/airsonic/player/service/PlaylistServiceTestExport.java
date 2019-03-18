@@ -78,8 +78,8 @@ public class PlaylistServiceTestExport {
 
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         playlistService.exportPlaylist(23, outputStream);
-        String actual = outputStream.toString();
-        Assert.assertEquals(IOUtils.toString(getClass().getResourceAsStream("/PLAYLISTS/23.m3u")), actual);
+        String actual = outputStream.toString("US_ASCII");
+        Assert.assertEquals(IOUtils.toString(getClass().getResourceAsStream("/PLAYLISTS/23.m3u"), "US_ASCII"), actual);
     }
 
     private List<MediaFile> getPlaylistFiles() {

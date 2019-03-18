@@ -77,12 +77,12 @@ public class PlaylistService {
             List<PlaylistExportHandler> exportHandlers,
             List<PlaylistImportHandler> importHandlers
     ) {
-        Assert.notNull(mediaFileDao);
-        Assert.notNull(playlistDao);
-        Assert.notNull(securityService);
-        Assert.notNull(settingsService);
-        Assert.notNull(exportHandlers);
-        Assert.notNull(importHandlers);
+        Assert.notNull(mediaFileDao, "Cannot be null");
+        Assert.notNull(playlistDao, "Cannot be null");
+        Assert.notNull(securityService, "Cannot be null");
+        Assert.notNull(settingsService, "Cannot be null");
+        Assert.notNull(exportHandlers, "Cannot be null");
+        Assert.notNull(importHandlers, "Cannot be null");
         this.mediaFileDao = mediaFileDao;
         this.playlistDao = playlistDao;
         this.securityService = securityService;
