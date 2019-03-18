@@ -94,6 +94,25 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 
+
+## Gradle.gitignore
+.gradle
+build/
+out/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Cache of project
+.gradletasknamecache
+
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties
+
+
 ## Eclipse.gitignore
 .metadata
 bin/
@@ -149,3 +168,5 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+!/repo/**/*.jar

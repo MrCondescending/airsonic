@@ -230,7 +230,7 @@ public class PodcastService {
             }
         }));
     }
-
+    //TODO this handles the sorting, add a new GUI element to sort by, and edit this accordingly.
     private List<PodcastEpisode> filterAllowed(List<PodcastEpisode> episodes) {
         List<PodcastEpisode> result = new ArrayList<PodcastEpisode>(episodes.size());
         for (PodcastEpisode episode : episodes) {

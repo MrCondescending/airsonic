@@ -147,7 +147,7 @@ public class AlbumDao extends AbstractDao {
         int id = queryForInt("select id from album where artist=? and name=?", null, album.getArtist(), album.getName());
         album.setId(id);
     }
-
+    /* Garbage code, removed
     /**
      * Returns albums in alphabetical order.
      *
@@ -156,12 +156,12 @@ public class AlbumDao extends AbstractDao {
      * @param byArtist     Whether to sort by artist name
      * @param musicFolders Only return albums from these folders.
      * @return Albums in alphabetical order.
-     */
+
     @Deprecated
     public List<Album> getAlphabetialAlbums(final int offset, final int count, boolean byArtist, final List<MusicFolder> musicFolders) {
         return getAlphabeticalAlbums(offset, count, byArtist, false, musicFolders);
     }
-
+    */
     /**
      * Returns albums in alphabetical order.
      *
