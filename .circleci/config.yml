@@ -3,7 +3,7 @@ jobs:
   build:
     steps:
         -checkout
-        -run:
+        - run:
           name: Echo Out
           command: 'echo Hello World'
 workflow:
