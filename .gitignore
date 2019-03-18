@@ -97,7 +97,8 @@ buildNumber.properties
 
 ## Gradle.gitignore
 .gradle
-/build/
+build/
+out/
 
 # Ignore Gradle GUI config
 gradle-app.setting
@@ -167,3 +168,5 @@ local.properties
 
 # Code Recommenders
 .recommenders/
+
+!/repo/**/*.jar
