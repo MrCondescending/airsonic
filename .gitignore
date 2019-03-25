@@ -14,6 +14,14 @@
 Thumbs.db
 ehthumbs.db
 
+#new gradle
+airsonic.log
+airsonic.properties
+rollback.sql
+db/
+lucene2/
+
+
 # Folder config file
 Desktop.ini
 
