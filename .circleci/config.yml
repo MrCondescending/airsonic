@@ -9,7 +9,7 @@ jobs:
       - restore_cache:
           keys:
             - norsesonic-{{ checksum "pom.xml" }}
-      #- run: mvn dependency:go-offline
+      - run: mvn dependency:go-offline
       - save_cache:
           paths:
             - ~/.m2
@@ -29,6 +29,6 @@ workflow:
       build:
         filters:
           branches:
-only:
-  -master
-  -dev
+            only:
+              -master
+              -dev
