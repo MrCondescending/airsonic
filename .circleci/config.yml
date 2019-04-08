@@ -29,4 +29,6 @@ workflow:
       build:
         filters:
           branches:
-only: milestone1
+only:
+  -master
+  -dev
